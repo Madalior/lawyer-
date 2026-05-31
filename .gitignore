@@ -1,0 +1,7 @@
+# Ignore video recordings and temp files
+*.mp4
+*.zip
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
