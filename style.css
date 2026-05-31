@@ -907,7 +907,7 @@ button { cursor: pointer; }
     justify-content: center;
     gap: 6px 12px;
   }
-  /* Hero stage: natural column flow — title above, character overlaps it from below */
+  /* Hero stage: natural column flow — title lower, character bigger */
   .hero-stage {
     flex: 1;
     flex-direction: column;
@@ -915,7 +915,7 @@ button { cursor: pointer; }
     justify-content: flex-start;
     min-height: 0;
     margin-top: 0;
-    padding-top: 18px;
+    padding-top: 36px;
     gap: 0;
   }
 
@@ -944,16 +944,16 @@ button { cursor: pointer; }
     letter-spacing: -1.5px;
   }
 
-  /* Character: pull up over the title text — name appears behind image */
+  /* Character: bigger + deeper overlap so name sits further behind */
   .hero-char-wrap {
-    width: 78vw;
-    max-width: 300px;
-    margin: -55px auto 0;
+    width: 88vw;
+    max-width: 340px;
+    margin: -72px auto 0;
     position: relative;
     z-index: 4;
   }
   .hero-char-img {
-    max-height: 340px;
+    max-height: 420px;
   }
   .hero-ribbon {
     height: 32px;
