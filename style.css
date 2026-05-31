@@ -207,6 +207,8 @@ button { cursor: pointer; }
   transform-origin: center bottom;
 }
 .hero-char-img {
+  position: relative;
+  left: 25px;
   width: 100%;
   max-height: 800px;
   object-fit: contain;
@@ -731,6 +733,8 @@ button { cursor: pointer; }
   will-change: transform, opacity;
 }
 .closing-char-img-wrap img {
+  position: relative;
+  left: 25px;
   width: 100%;
   max-height: 80vh;
   object-fit: contain;
@@ -927,6 +931,7 @@ button { cursor: pointer; }
   }
   .hero-char-img {
     max-height: 360px;
+    left: 12px;
   }
   .hero-ribbon {
     height: 32px;
@@ -1116,6 +1121,7 @@ button { cursor: pointer; }
   }
   .closing-char-img-wrap img {
     max-height: 45vh;
+    left: 12px;
   }
   .closing-contacts {
     bottom: 20px;
