@@ -907,7 +907,7 @@ button { cursor: pointer; }
     justify-content: center;
     gap: 6px 12px;
   }
-  /* Hero stage: natural column flow — title above, character below */
+  /* Hero stage: natural column flow — title above, character overlaps it from below */
   .hero-stage {
     flex: 1;
     flex-direction: column;
@@ -916,7 +916,7 @@ button { cursor: pointer; }
     min-height: 0;
     margin-top: 0;
     padding-top: 18px;
-    gap: 16px;
+    gap: 0;
   }
 
   /* Circle: stays absolute, repositioned behind character */
@@ -935,19 +935,22 @@ button { cursor: pointer; }
     bottom: auto;
     text-align: center;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     padding: 0;
+    z-index: 2;
   }
   .hero-title {
     font-size: clamp(3.8rem, 16vw, 7rem);
     letter-spacing: -1.5px;
   }
 
-  /* Character: centered block below the title */
+  /* Character: pull up over the title text — name appears behind image */
   .hero-char-wrap {
     width: 78vw;
     max-width: 300px;
-    margin: 0 auto;
+    margin: -55px auto 0;
+    position: relative;
+    z-index: 4;
   }
   .hero-char-img {
     max-height: 340px;
