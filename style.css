@@ -944,16 +944,16 @@ button { cursor: pointer; }
     letter-spacing: -1.5px;
   }
 
-  /* Character: pull up over the title text — name appears behind image */
+  /* Character: zoomed in, name sits behind the person's body */
   .hero-char-wrap {
-    width: 78vw;
-    max-width: 300px;
-    margin: -55px auto 0;
+    width: 92vw;
+    max-width: 380px;
+    margin: -110px auto 0;
     position: relative;
     z-index: 4;
   }
   .hero-char-img {
-    max-height: 340px;
+    max-height: 68vh;
   }
   .hero-ribbon {
     height: 32px;
