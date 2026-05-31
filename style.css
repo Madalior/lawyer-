@@ -202,17 +202,16 @@ button { cursor: pointer; }
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin: 0 auto;
   margin-bottom: 0px;
   will-change: transform, opacity;
   transform-origin: center bottom;
 }
 .hero-char-img {
-  position: relative;
-  left: 32px;
   width: 100%;
   max-height: 800px;
   object-fit: contain;
-  object-position: bottom;
+  object-position: center bottom;
   filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5));
   user-select: none;
   pointer-events: none;
@@ -687,6 +686,9 @@ button { cursor: pointer; }
   opacity: 0;  /* JS will animate this in */
   transform: translateY(60px);
   will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .closing-in-chambers {
@@ -733,12 +735,10 @@ button { cursor: pointer; }
   will-change: transform, opacity;
 }
 .closing-char-img-wrap img {
-  position: relative;
-  left: 32px;
   width: 100%;
   max-height: 80vh;
   object-fit: contain;
-  object-position: bottom;
+  object-position: center bottom;
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.06));
 }
 
@@ -931,7 +931,6 @@ button { cursor: pointer; }
   }
   .hero-char-img {
     max-height: 360px;
-    left: 20px;
   }
   .hero-ribbon {
     height: 32px;
@@ -1097,31 +1096,36 @@ button { cursor: pointer; }
     height: 85vw;
   }
   .closing-top-text {
-    padding-top: 130px;
+    padding-top: 80px; /* clear fixed nav ~60px + breathing room */
   }
   .closing-in-chambers {
     font-size: 0.65rem;
     letter-spacing: 3px;
   }
   .closing-name-row {
-    font-size: clamp(3rem, 11vw, 6rem);
+    font-size: clamp(2.8rem, 11vw, 6rem);
+    word-break: break-word;
+    line-height: 1;
+    padding: 0 16px;
   }
   .closing-char-row {
-    gap: 20px;
+    gap: 12px;
     flex-direction: column;
     align-items: center;
-    bottom: 80px;
+    bottom: 60px;
   }
   .closing-year {
     font-size: 1.2rem;
     padding-bottom: 0;
   }
   .closing-char-img-wrap {
-    width: 75vw;
+    width: 80vw;
+    max-width: 300px;
+    justify-content: center;
   }
   .closing-char-img-wrap img {
-    max-height: 45vh;
-    left: 20px;
+    max-height: 50vh;
+    object-position: center top;
   }
   .closing-contacts {
     bottom: 20px;
