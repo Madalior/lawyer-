@@ -874,11 +874,11 @@ button { cursor: pointer; }
     display: flex !important;
   }
 
-  /* ── HERO: everything in one screen ─────────────────────────── */
+  /* ── HERO: content-driven height, no gaps ─────────────────── */
   .s-hero {
     padding: 0 20px;
+    height: auto;
     min-height: 0;
-    height: 100dvh;           /* lock to exactly one screen */
     overflow: hidden;
   }
 
