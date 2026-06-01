@@ -913,14 +913,14 @@ button { cursor: pointer; }
     padding-bottom: 0;
   }
 
-  /* Stage: flex:1 fills remaining space, space-between pushes title UP and character DOWN */
+  /* Stage: everything pushed to bottom, no gap before ribbon */
   .hero-stage {
     flex: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     padding: 0;
     gap: 0;
   }
@@ -935,7 +935,7 @@ button { cursor: pointer; }
     top: auto;
   }
 
-  /* Title: flows at top of stage, sits behind character */
+  /* Title: sits behind character via z-index */
   .hero-title-wrap {
     position: static;
     bottom: auto;
@@ -951,17 +951,17 @@ button { cursor: pointer; }
     line-height: 0.85;
   }
 
-  /* Character: fill the stage without overflowing */
+  /* Character: overlaps title deeply so name appears behind person */
   .hero-char-wrap {
     width: 82vw;
     max-width: 310px;
-    margin: -60px auto 0;
+    margin: -80px auto 0;
     position: relative;
     z-index: 4;
     flex-shrink: 0;
   }
   .hero-char-img {
-    max-height: 42vh;
+    max-height: 44vh;
     width: 100%;
     object-fit: contain;
     object-position: center bottom;
