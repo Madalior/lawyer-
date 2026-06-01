@@ -913,12 +913,12 @@ button { cursor: pointer; }
     padding-bottom: 0;
   }
 
-  /* Stage: flex:1 fills remaining space, content centered to balance gaps */
+  /* Stage: flex:1 fills remaining space, space-between pushes title UP and character DOWN */
   .hero-stage {
     flex: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     min-height: 0;
     overflow: hidden;
     padding: 0;
@@ -961,7 +961,7 @@ button { cursor: pointer; }
     flex-shrink: 0;
   }
   .hero-char-img {
-    max-height: 36vh;
+    max-height: 42vh;
     width: 100%;
     object-fit: contain;
     object-position: center bottom;
