@@ -874,14 +874,19 @@ button { cursor: pointer; }
     display: flex !important;
   }
 
-  /* Section Hero */
+  /* ── HERO: everything in one screen ─────────────────────────── */
   .s-hero {
     padding: 0 20px;
+    min-height: 0;
+    height: 100dvh;           /* lock to exactly one screen */
+    overflow: hidden;
   }
+
+  /* Top row: nav is fixed so no giant padding needed, just clear it */
   .hero-top-row {
-    padding-top: 85px;
+    padding-top: 68px;        /* just enough to clear the 60px fixed nav */
     flex-direction: column;
-    gap: 8px;
+    gap: 0;
     align-items: center;
     text-align: center;
   }
@@ -889,46 +894,48 @@ button { cursor: pointer; }
     display: none !important;
   }
   .tag-pill {
-    padding: 4px 10px;
-    font-size: 0.52rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.02);
+    display: none;
   }
   .hero-date {
     display: none !important;
   }
+
+  /* Cast row — compact */
   .hero-cast-row {
-    font-size: 0.58rem;
+    font-size: 0.56rem;
     letter-spacing: 3px;
-    padding-top: 10px;
+    padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px 12px;
+    gap: 4px 10px;
+    padding-bottom: 0;
   }
+
+  /* Stage: flex:1 fills remaining space, character pinned to bottom */
   .hero-stage {
     flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     min-height: 0;
-    margin-top: 0;
-    padding-top: 0;
+    overflow: hidden;
+    padding: 0;
     gap: 0;
   }
 
-  /* Circle: stays absolute, repositioned behind character */
+  /* Circle: behind character */
   .hero-circle {
-    width: 72vw;
-    height: 72vw;
-    max-width: 310px;
-    max-height: 310px;
+    width: 65vw;
+    height: 65vw;
+    max-width: 280px;
+    max-height: 280px;
     bottom: 0;
     top: auto;
   }
 
-  /* Title: override absolute → flow naturally at top of stage */
+  /* Title: flows at top of stage, sits behind character */
   .hero-title-wrap {
     position: static;
     bottom: auto;
@@ -939,37 +946,53 @@ button { cursor: pointer; }
     z-index: 2;
   }
   .hero-title {
-    font-size: clamp(3.8rem, 16vw, 7rem);
+    font-size: clamp(3.4rem, 15vw, 6rem);
     letter-spacing: -1.5px;
+    line-height: 0.85;
   }
 
-  /* Character: bigger + deeper overlap so name sits further behind */
+  /* Character: fill the stage without overflowing */
   .hero-char-wrap {
-    width: 88vw;
-    max-width: 340px;
-    margin: -72px auto 0;
+    width: 82vw;
+    max-width: 310px;
+    margin: -60px auto 0;
     position: relative;
     z-index: 4;
+    flex-shrink: 0;
   }
   .hero-char-img {
-    max-height: 420px;
+    max-height: 36vh;
+    width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
   }
+
+  /* Ribbon */
   .hero-ribbon {
-    height: 32px;
+    height: 30px;
+    flex-shrink: 0;
   }
   .ribbon-track {
-    font-size: 0.7rem;
-    gap: 16px;
+    font-size: 0.65rem;
+    gap: 14px;
   }
+
+  /* Bottom row: compact single column */
   .hero-bottom-row {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 12px;
+    padding: 14px 0;
+    flex-shrink: 0;
   }
   .hero-story p {
     max-width: 100%;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .story-label {
+    font-size: 0.6rem;
   }
   .hero-cta {
     width: 100%;
@@ -977,9 +1000,9 @@ button { cursor: pointer; }
   }
   .btn-consult {
     width: 100%;
-    max-width: 280px;
-    font-size: 0.65rem;
-    padding: 10px 18px;
+    max-width: 260px;
+    font-size: 0.62rem;
+    padding: 9px 16px;
   }
 
   /* Section Details */
